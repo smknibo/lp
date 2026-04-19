@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="PPDB SMKN Ile Boleng 2026/2027 — Terakreditasi B. Skill Nyata, Masa Depan Pasti." />
+<title>PPDB SMKN Ile Boleng 2026/2027 — Skill Nyata, Masa Depan Pasti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          brand: { 50:'#fffbeb',100:'#fef3c7',500:'#eab308',600:'#ca8a04',700:'#a16207',900:'#0c0a09' },
+          accent: '#fbbf24',
+        },
+        animation: {
+          'float': 'float 6s ease-in-out infinite',
+          'gradient': 'gradient 12s ease infinite',
+        },
+        keyframes: {
+          float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+          gradient: { '0%,100%': { 'background-position': '0% 50%' }, '50%': { 'background-position': '100% 50%' } },
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .font-display { font-family: 'Space Grotesk', sans-serif; }
+  .hero-gradient {
+    background-image:
+      linear-gradient(100deg, rgba(10,10,10,.92) 0%, rgba(12,10,9,.82) 35%, rgba(66,32,6,.55) 70%, rgba(161,98,7,.35) 100%),
+      radial-gradient(ellipse at 20% 40%, rgba(234,179,8,.18), transparent 55%),
+      var(--hero-img, url('hero.webp'));
+    background-size: cover, cover, cover;
+    background-position: center, center, center;
+    background-repeat: no-repeat;
+  }
+  .hero-vignette { background: linear-gradient(to bottom, transparent 60%, rgba(9,9,11,.75) 90%, #09090b 100%); }
+  .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.15); }
+  .card-hover { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -20px rgba(234,179,8,.4); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .blob { position:absolute; border-radius:9999px; filter: blur(60px); opacity:.5; pointer-events:none; }
+  .prose-insight h4 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem; margin-top:1.25rem; margin-bottom:.5rem; color:#082f3e; }
+  .prose-insight p { margin-bottom:.75rem; line-height:1.6; }
+  .prose-insight ul { list-style:disc; padding-left:1.25rem; margin-bottom:.75rem; }
+  .prose-insight ul li { margin-bottom:.3rem; }
+  .prose-insight .chip { display:inline-block; background:#fef3c7; color:#a16207; font-size:.75rem; font-weight:600; padding:.25rem .6rem; border-radius:9999px; margin:.15rem .15rem .15rem 0; }
+  .prose-insight .box { background:#f8fafc; border:1px solid #e2e8f0; border-radius:1rem; padding:1rem 1.25rem; margin:.75rem 0; }
+  .prose-insight .box-y { background:#fefce8; border:1px solid #fde68a; border-radius:1rem; padding:1rem 1.25rem; margin:.75rem 0; }
+  .prose-insight .box-g { background:#ecfdf5; border:1px solid #a7f3d0; border-radius:1rem; padding:1rem 1.25rem; margin:.75rem 0; }
+</style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+
+<!-- NAVBAR -->
+<header class="fixed top-0 inset-x-0 z-40">
+  <nav class="mx-auto max-w-6xl mt-3 px-4">
+    <div class="glass rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 text-white">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-600 grid place-items-center text-zinc-900 font-black shadow-lg shadow-yellow-500/30">IB</div>
+        <div class="leading-tight">
+          <div class="font-display font-bold text-sm sm:text-base">SMKN Ile Boleng</div>
+          <div class="text-[10px] sm:text-xs text-white/70">PPDB 2026/2027</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm text-white/80 font-medium">
+        <a href="#keunggulan" class="hover:text-white">Keunggulan</a>
+        <a href="#jurusan" class="hover:text-white">Jurusan</a>
+        <a href="#alur" class="hover:text-white">Alur Daftar</a>
+      </div>
+      <button onclick="openModal()" class="inline-flex items-center gap-2 bg-accent hover:bg-yellow-300 text-brand-900 font-semibold px-4 py-2 rounded-xl text-sm shadow-lg shadow-yellow-500/20 transition">
+        🎯 <span class="hidden sm:inline">Booking Kuota</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero-gradient relative overflow-hidden pt-36 pb-28 sm:pt-44 sm:pb-40 text-white">
+  <div class="absolute inset-0 hero-vignette pointer-events-none"></div>
+  <div class="relative max-w-6xl mx-auto px-5">
+    <div class="reveal max-w-2xl">
+      <div class="flex flex-wrap gap-2">
+        <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs font-medium">
+          <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+          SPMB 2026/2027 · Dibuka 02 Juni 2026
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-green-500/20 border border-green-300/40 text-green-100 rounded-full px-3 py-1 text-xs font-bold">
+          ✅ Terakreditasi B
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-yellow-400/20 border border-yellow-300/40 text-yellow-100 rounded-full px-3 py-1 text-xs font-bold">
+          🏠 Asrama Putri GRATIS
+        </span>
+      </div>
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mt-5">
+        Skill Nyata, <br/>
+        <span class="bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent">Masa Depan Pasti.</span>
+      </h1>
+      <p class="mt-5 text-lg text-white/80 max-w-xl">
+        Bangun karier dari Lewopao — dari layar lebar, jaringan digital, hingga dunia perbankan. SMKN Ile Boleng siap cetak generasi kreatif, mandiri, & siap kerja.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <button onclick="openModal()" class="group inline-flex items-center gap-2 bg-accent hover:bg-yellow-300 text-brand-900 font-bold px-6 py-3.5 rounded-2xl shadow-xl shadow-yellow-500/30 transition">
+          🎯 Booking Kuota Sekarang
+        </button>
+        <a href="#jurusan" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3.5 rounded-2xl font-semibold transition">Lihat Jurusan</a>
+      </div>
+      <div class="mt-10 grid grid-cols-3 gap-4 max-w-md">
+        <div><div class="font-display text-3xl font-bold">20+</div><div class="text-xs text-white/70">Tahun Pengalaman</div></div>
+        <div><div class="font-display text-3xl font-bold">4</div><div class="text-xs text-white/70">Konsentrasi Keahlian</div></div>
+        <div><div class="font-display text-3xl font-bold">#1</div><div class="text-xs text-white/70">UNBK di Flotim</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan" class="py-20 sm:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Kenapa SMKN Ile Boleng?</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mt-3">Sekolah Kejuruan Pertama & Terdepan di Adonara</h2>
+      <p class="mt-4 text-zinc-400">Berdiri sejak 2006, <b>Terakreditasi B</b>, dan telah dipercaya lembaga nasional.</p>
+    </div>
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="reveal card-hover bg-zinc-900/60 backdrop-blur rounded-3xl p-7 border border-yellow-500/10 shadow-xl shadow-black/40 hover:border-yellow-500/30"><div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 grid place-items-center text-2xl">🏆</div><h3 class="font-display font-bold text-lg mt-4">Pelopor UNBK di Flores Timur</h3><p class="text-zinc-400 text-sm mt-2">Sekolah pertama yang menyelenggarakan UNBK sejak simulasi kedua tahun 2017.</p></div>
+      <div class="reveal card-hover bg-zinc-900/60 backdrop-blur rounded-3xl p-7 border border-yellow-500/10 shadow-xl shadow-black/40 hover:border-yellow-500/30"><div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 grid place-items-center text-2xl">📋</div><h3 class="font-display font-bold text-lg mt-4">TUK Seleksi P3K Provinsi NTT</h3><p class="text-zinc-400 text-sm mt-2">Dipercaya sebagai Tempat Uji Kompetensi resmi skala provinsi.</p></div>
+      <div class="reveal card-hover bg-zinc-900/60 backdrop-blur rounded-3xl p-7 border border-yellow-500/10 shadow-xl shadow-black/40 hover:border-yellow-500/30"><div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 grid place-items-center text-2xl">🗳️</div><h3 class="font-display font-bold text-lg mt-4">TUK Seleksi Pemilu</h3><p class="text-zinc-400 text-sm mt-2">Diselenggarakan oleh KPUD Flores Timur di kampus kami.</p></div>
+      <div class="reveal card-hover bg-zinc-900/60 backdrop-blur rounded-3xl p-7 border border-yellow-500/10 shadow-xl shadow-black/40 hover:border-yellow-500/30"><div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 grid place-items-center text-2xl">🏫</div><h3 class="font-display font-bold text-lg mt-4">Melayani ANBK 21 SD</h3><p class="text-zinc-400 text-sm mt-2">Pusat ANBK se-Kecamatan Ile Boleng sejak 2021.</p></div>
+      <div class="reveal card-hover bg-zinc-900/60 backdrop-blur rounded-3xl p-7 border border-yellow-500/10 shadow-xl shadow-black/40 hover:border-yellow-500/30"><div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 grid place-items-center text-2xl">🎓</div><h3 class="font-display font-bold text-lg mt-4">Menuju LSP P1</h3><p class="text-zinc-400 text-sm mt-2">Telah mengantongi surat persetujuan dari Disdikbud Provinsi NTT.</p></div>
+      <div class="reveal card-hover bg-zinc-900/60 backdrop-blur rounded-3xl p-7 border border-yellow-500/10 shadow-xl shadow-black/40 hover:border-yellow-500/30"><div class="w-12 h-12 rounded-2xl bg-green-50 text-green-600 grid place-items-center text-2xl">✅</div><h3 class="font-display font-bold text-lg mt-4">Terakreditasi B</h3><p class="text-zinc-400 text-sm mt-2">Status akreditasi resmi dari BAN-S/M — jaminan mutu penyelenggaraan pendidikan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JURUSAN -->
+<section id="jurusan" class="py-20 sm:py-28 bg-gradient-to-b from-black via-zinc-950 to-zinc-900 relative">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Pilih Passionmu</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mt-3">4 Konsentrasi Keahlian</h2>
+      <p class="mt-4 text-zinc-400">Kurikulum Merdeka, praktik langsung, alat industri-standar.</p>
+    </div>
+    <div class="mt-14 grid md:grid-cols-2 gap-6">
+      <!-- PF -->
+      <div class="reveal card-hover relative overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-rose-500 via-red-500 to-orange-500 text-white">
+        <div class="absolute -right-10 -top-10 text-[10rem] opacity-10">🎬</div>
+        <span class="inline-block bg-white/20 border border-white/30 rounded-full px-3 py-1 text-xs font-semibold">HERO · Sejak 2011</span>
+        <h3 class="font-display text-2xl font-bold mt-4">Produksi Film</h3>
+        <p class="text-white/90 mt-2">Dari Lewopao ke layar lebar. Belajar sinematografi dengan gear broadcast profesional — dipercaya KPUD & BRI untuk live streaming.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/90">
+          <li>✓ Sony A6600, Panasonic HC-X2000, drone, ATEM Mini</li>
+          <li>✓ 4 domain: foto, video, live streaming, film</li>
+          <li>✓ Track record: Pleno KPUD Flotim, BRI Simpedes</li>
+        </ul>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <button onclick="openDetail('pf')" class="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 border border-white/30 text-white font-bold px-4 py-2.5 rounded-xl transition">🔍 Info Detail</button>
+          <button onclick="openModal('Produksi Film')" class="inline-flex items-center gap-2 bg-white text-rose-600 font-bold px-4 py-2.5 rounded-xl hover:bg-rose-50 transition">🎯 Booking Kuota</button>
+        </div>
+      </div>
+      <!-- TKJ -->
+      <div class="reveal card-hover relative overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 text-white">
+        <div class="absolute -right-10 -top-10 text-[10rem] opacity-10">💻</div>
+        <span class="inline-block bg-white/20 border border-white/30 rounded-full px-3 py-1 text-xs font-semibold">Sejak 2006 · Pelopor Flotim</span>
+        <h3 class="font-display text-2xl font-bold mt-4">Teknik Komputer & Jaringan</h3>
+        <p class="text-white/90 mt-2">Bangun dunia digital dari Adonara. Punya paket Fiber Optik lengkap — sama dengan yang dipakai teknisi Telkom.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/90">
+          <li>✓ Splicer, OTDR, OPM, tool kit fiber lengkap</li>
+          <li>✓ 2 gedung praktik khusus TKJ</li>
+          <li>✓ UKK pola LSP (mitra LSP P1 SMKN 1 Kupang)</li>
+        </ul>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <button onclick="openDetail('tkj')" class="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 border border-white/30 text-white font-bold px-4 py-2.5 rounded-xl transition">🔍 Info Detail</button>
+          <button onclick="openModal('Teknik Komputer &amp; Jaringan')" class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-4 py-2.5 rounded-xl hover:bg-blue-50 transition">🎯 Booking Kuota</button>
+        </div>
+      </div>
+      <!-- LP -->
+      <div class="reveal card-hover relative overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-emerald-500 via-teal-600 to-green-700 text-white">
+        <div class="absolute -right-10 -top-10 text-[10rem] opacity-10">🏦</div>
+        <span class="inline-block bg-white/20 border border-white/30 rounded-full px-3 py-1 text-xs font-semibold">Sejak 2016</span>
+        <h3 class="font-display text-2xl font-bold mt-4">Layanan Perbankan</h3>
+        <p class="text-white/90 mt-2">Punya Bank Mini lengkap dengan mesin deteksi uang palsu & passbook printer. Alumni dibooking industri sebelum lulus.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/90">
+          <li>✓ Mitra PKL: BRI, Bank NTT, BTN Maumere, 3 Kopdit</li>
+          <li>✓ Alumni 2025 kerja di Kopdit Pintu Air (Ende)</li>
+          <li>✓ Bank Mini simulasi kantor bank sungguhan</li>
+        </ul>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <button onclick="openDetail('lp')" class="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 border border-white/30 text-white font-bold px-4 py-2.5 rounded-xl transition">🔍 Info Detail</button>
+          <button onclick="openModal('Layanan Perbankan')" class="inline-flex items-center gap-2 bg-white text-emerald-700 font-bold px-4 py-2.5 rounded-xl hover:bg-emerald-50 transition">🎯 Booking Kuota</button>
+        </div>
+      </div>
+      <!-- TITL -->
+      <div class="reveal card-hover relative overflow-hidden rounded-3xl p-8 bg-gradient-to-br from-amber-500 via-yellow-500 to-orange-500 text-white">
+        <div class="absolute -right-10 -top-10 text-[10rem] opacity-10">⚡</div>
+        <span class="inline-block bg-black/30 border border-white/30 rounded-full px-3 py-1 text-xs font-bold animate-pulse">🚧 ON PROGRESS</span>
+        <h3 class="font-display text-2xl font-bold mt-4">Teknik Instalasi Tenaga Listrik</h3>
+        <p class="text-white/90 mt-2">Jurusan baru dalam proses pembukaan. Prospek kerja luas di sektor energi, konstruksi, dan industri.</p>
+        <ul class="mt-5 space-y-2 text-sm text-white/90">
+          <li>✓ Instalasi listrik rumah & industri</li>
+          <li>✓ Sistem tenaga & kontrol</li>
+          <li>✓ Kesempatan angkatan perdana</li>
+        </ul>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <button onclick="openDetail('titl')" class="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 border border-white/30 text-white font-bold px-4 py-2.5 rounded-xl transition">🔍 Info Detail</button>
+          <button onclick="openModal('Teknik Instalasi Tenaga Listrik (On Progress)')" class="inline-flex items-center gap-2 bg-white text-amber-700 font-bold px-4 py-2.5 rounded-xl hover:bg-amber-50 transition">🎯 Booking Kuota</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALUR DAFTAR -->
+<section id="alur" class="py-20 sm:py-28">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Mudah & Cepat</span>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mt-3">Alur Pendaftaran</h2>
+      <p class="mt-4 text-zinc-400">Amankan tempatmu sebelum pendaftaran resmi dibuka.</p>
+    </div>
+
+    <!-- JADWAL SPMB -->
+    <div class="mt-14 reveal">
+      <h3 class="font-display text-2xl font-bold text-center">📅 Jadwal SPMB 2026/2027</h3>
+      <p class="text-center text-zinc-400 mt-2">Sistem Penerimaan Murid Baru (SPMB) SMKN Ile Boleng</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="card-hover relative overflow-hidden rounded-2xl p-5 bg-gradient-to-br from-teal-500 to-emerald-600 text-white">
+          <div class="text-xs font-semibold opacity-80">GELOMBANG I</div>
+          <div class="font-display text-lg font-bold mt-1">Pendaftaran</div>
+          <div class="mt-3 text-2xl font-display font-extrabold">02 – 11</div>
+          <div class="text-sm opacity-90">Juni 2026</div>
+        </div>
+        <div class="card-hover relative overflow-hidden rounded-2xl p-5 bg-gradient-to-br from-teal-600 to-cyan-700 text-white">
+          <div class="text-xs font-semibold opacity-80">TAHAP 1</div>
+          <div class="font-display text-lg font-bold mt-1">Registrasi</div>
+          <div class="mt-3 text-2xl font-display font-extrabold">12 & 13</div>
+          <div class="text-sm opacity-90">Juni 2026</div>
+        </div>
+        <div class="card-hover relative overflow-hidden rounded-2xl p-5 bg-gradient-to-br from-indigo-500 to-blue-600 text-white">
+          <div class="text-xs font-semibold opacity-80">GELOMBANG II</div>
+          <div class="font-display text-lg font-bold mt-1">Pendaftaran</div>
+          <div class="mt-3 text-2xl font-display font-extrabold">17 – 27</div>
+          <div class="text-sm opacity-90">Juni 2026</div>
+        </div>
+        <div class="card-hover relative overflow-hidden rounded-2xl p-5 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+          <div class="text-xs font-semibold opacity-80">TAHAP 2</div>
+          <div class="font-display text-lg font-bold mt-1">Registrasi</div>
+          <div class="mt-3 text-2xl font-display font-extrabold">29 & 30</div>
+          <div class="text-sm opacity-90">Juni 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONLINE REG BANNER -->
+    <div class="mt-10 reveal">
+      <div class="relative overflow-hidden rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-yellow-700 via-amber-600 to-yellow-700 text-white border border-yellow-500/30">
+        <div class="flex flex-col sm:flex-row items-center gap-6">
+          <div class="text-6xl">🌐</div>
+          <div class="flex-1 text-center sm:text-left">
+            <div class="text-xs uppercase tracking-wider opacity-80 font-semibold">Pendaftaran Daring</div>
+            <div class="font-display text-base sm:text-lg font-bold mt-1">Pendaftaran dilakukan secara daring melalui link:</div>
+            <a href="http://www.eppdb.smknileboleng.sch.id" target="_blank" rel="noopener" class="inline-block mt-2 font-mono text-base sm:text-lg font-bold underline hover:text-yellow-300 break-all">www.eppdb.smknileboleng.sch.id</a>
+            <p class="mt-3 text-sm text-white/80">Klik tombol <b>BUKA PORTAL</b> untuk langsung mengakses sistem pendaftaran online.</p>
+          </div>
+          <a href="http://www.eppdb.smknileboleng.sch.id" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent hover:bg-yellow-300 text-brand-900 font-extrabold px-6 py-4 rounded-xl whitespace-nowrap shadow-lg transition text-base">🚀 BUKA PORTAL →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERKS -->
+    <div class="mt-10 grid md:grid-cols-3 gap-4 reveal">
+      <div class="card-hover rounded-2xl p-5 bg-gradient-to-br from-yellow-500/10 to-amber-500/5 border border-yellow-500/20">
+        <div class="text-3xl">🏠</div>
+        <h4 class="font-display font-bold mt-2 text-amber-300">Asrama GRATIS</h4>
+        <p class="text-sm text-amber-100/70 mt-1">Tersedia bagi murid putri dari luar kecamatan — tanpa biaya tambahan.</p>
+      </div>
+      <div class="card-hover rounded-2xl p-5 bg-gradient-to-br from-rose-500/10 to-pink-500/5 border border-rose-500/20">
+        <div class="text-3xl">🚨</div>
+        <h4 class="font-display font-bold mt-2 text-rose-300">Kuota Terbatas</h4>
+        <p class="text-sm text-rose-100/70 mt-1">Segera daftar sebelum kuota habis. Gelombang I dibuka lebih dulu.</p>
+      </div>
+      <div class="card-hover rounded-2xl p-5 bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/20">
+        <div class="text-3xl">🏅</div>
+        <h4 class="font-display font-bold mt-2 text-emerald-300">Ekstrakurikuler Lengkap</h4>
+        <p class="text-sm text-emerald-100/70 mt-1">Pencak Silat, Bola Kaki, Bola Volley, Futsal, Musik.</p>
+      </div>
+    </div>
+
+    <!-- STEPS -->
+    <h3 class="mt-16 font-display text-2xl font-bold text-center reveal">📋 Alur Booking Kuota via WhatsApp</h3>
+    <p class="text-center text-zinc-400 mt-2 reveal">Atau amankan tempatmu lebih awal lewat WhatsApp — panitia akan follow-up langsung.</p>
+    <div class="mt-10 grid sm:grid-cols-3 gap-6">
+      <div class="reveal text-center p-6">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-600 text-white grid place-items-center font-display font-bold text-xl">1</div>
+        <h4 class="font-display font-bold mt-4">Klik Booking Kuota</h4>
+        <p class="text-zinc-400 text-sm mt-2">Tekan tombol di bagian manapun pada halaman ini.</p>
+      </div>
+      <div class="reveal text-center p-6">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-600 text-white grid place-items-center font-display font-bold text-xl">2</div>
+        <h4 class="font-display font-bold mt-4">Pilih Jurusan</h4>
+        <p class="text-zinc-400 text-sm mt-2">Pilih salah satu dari 4 konsentrasi keahlian.</p>
+      </div>
+      <div class="reveal text-center p-6">
+        <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-600 text-white grid place-items-center font-display font-bold text-xl">3</div>
+        <h4 class="font-display font-bold mt-4">Kirim ke WhatsApp</h4>
+        <p class="text-zinc-400 text-sm mt-2">Panitia PPDB akan follow-up langsung ke nomor kamu.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT PERSON -->
+    <div class="mt-14 reveal">
+      <h3 class="font-display text-2xl font-bold text-center">📞 Contact Person Panitia SPMB</h3>
+      <p class="text-center text-zinc-400 mt-2">Hubungi langsung untuk pertanyaan, klarifikasi, atau bantuan pendaftaran.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="https://wa.me/6282247586714?text=Halo%20Ibu%20Dulik%2C%20saya%20mau%20bertanya%20soal%20SPMB%20SMKN%20Ile%20Boleng%202026%2F2027" target="_blank" rel="noopener" class="card-hover bg-zinc-900/60 backdrop-blur rounded-2xl p-5 border border-yellow-500/10 shadow-lg shadow-black/40 hover:border-yellow-500/30 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 grid place-items-center text-xl">👩</div>
+          <div>
+            <div class="font-display font-bold">Ibu Dulik</div>
+            <div class="text-sm text-zinc-400">0822-4758-6714</div>
+          </div>
+        </a>
+        <a href="https://wa.me/6282340318615?text=Halo%20Pa%20Roni%2C%20saya%20mau%20bertanya%20soal%20SPMB%20SMKN%20Ile%20Boleng%202026%2F2027" target="_blank" rel="noopener" class="card-hover bg-zinc-900/60 backdrop-blur rounded-2xl p-5 border border-yellow-500/10 shadow-lg shadow-black/40 hover:border-yellow-500/30 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 grid place-items-center text-xl">👨</div>
+          <div>
+            <div class="font-display font-bold">Pa Roni</div>
+            <div class="text-sm text-zinc-400">0823-4031-8615</div>
+          </div>
+        </a>
+        <a href="https://wa.me/6282144550759?text=Halo%20Pa%20Ray%2C%20saya%20mau%20bertanya%20soal%20SPMB%20SMKN%20Ile%20Boleng%202026%2F2027" target="_blank" rel="noopener" class="card-hover bg-zinc-900/60 backdrop-blur rounded-2xl p-5 border border-yellow-500/10 shadow-lg shadow-black/40 hover:border-yellow-500/30 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 grid place-items-center text-xl">👨</div>
+          <div>
+            <div class="font-display font-bold">Pa Ray</div>
+            <div class="text-sm text-zinc-400">0821-4455-0759</div>
+          </div>
+        </a>
+        <a href="https://wa.me/6285337068940?text=Halo%20Pa%20Agus%2C%20saya%20mau%20bertanya%20soal%20SPMB%20SMKN%20Ile%20Boleng%202026%2F2027" target="_blank" rel="noopener" class="card-hover bg-zinc-900/60 backdrop-blur rounded-2xl p-5 border border-yellow-500/10 shadow-lg shadow-black/40 hover:border-yellow-500/30 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 grid place-items-center text-xl">👨</div>
+          <div>
+            <div class="font-display font-bold">Pa Agus</div>
+            <div class="text-sm text-zinc-400">0853-3706-8940</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA BOOKING KUOTA -->
+    <div class="mt-14 reveal">
+      <div class="relative overflow-hidden rounded-[2.5rem] hero-gradient p-10 sm:p-14 text-white text-center">
+        <div class="blob bg-yellow-400 w-72 h-72 -top-20 -left-10"></div>
+        <div class="blob bg-pink-500 w-80 h-80 -bottom-20 -right-10"></div>
+        <div class="relative">
+          <h3 class="font-display text-2xl sm:text-4xl font-extrabold">Siap Jadi Bagian dari Kami?</h3>
+          <p class="mt-4 text-white/80 max-w-xl mx-auto">Kuota terbatas. Amankan tempatmu hari ini — panitia akan menghubungi kamu lewat WhatsApp.</p>
+          <button onclick="openModal()" class="mt-8 inline-flex items-center gap-2 bg-accent hover:bg-yellow-300 text-brand-900 font-bold px-8 py-4 rounded-2xl text-lg shadow-2xl shadow-yellow-500/30 transition">🎯 Booking Kuota Sekarang</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-yellow-500/20 text-white/70 py-14">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-4 gap-8">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-600 grid place-items-center text-zinc-900 font-black shadow-lg shadow-yellow-500/30">IB</div>
+        <div class="font-display font-bold text-white text-lg">SMKN Ile Boleng</div>
+      </div>
+      <p class="mt-3 text-sm leading-relaxed">Jl. Anggrek No. 07, Desa Lewopao, Kec. Ile Boleng, Adonara, Kab. Flores Timur, NTT.</p>
+      <div class="mt-4 inline-flex items-center gap-2 bg-green-500/20 border border-green-300/40 text-green-100 rounded-full px-3 py-1 text-xs font-bold">✅ Terakreditasi B</div>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://www.youtube.com/c/SMKNILEBOLENGNTT" target="_blank" rel="noopener" aria-label="YouTube" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-red-500 grid place-items-center transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 16 24 12 24 12s0-4-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/smknileboleng/" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-pink-500 grid place-items-center transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.5 1s.8.9 1 1.5c.2.4.3 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-1 1.5s-.9.8-1.5 1c-.4.2-1.1.3-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a4.1 4.1 0 0 1-1.5-1 4.1 4.1 0 0 1-1-1.5c-.2-.4-.3-1.1-.4-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 1-1.5s.9-.8 1.5-1c.4-.2 1.1-.3 2.3-.4C8.4 2.2 8.8 2.2 12 2.2zm0 2C8.9 4.2 8.5 4.2 7.3 4.3c-1.1.1-1.7.2-2.1.4-.5.2-.9.5-1.3.8s-.6.8-.8 1.3c-.2.4-.3 1-.4 2.1C2.6 10.1 2.6 10.5 2.6 12s0 1.9.1 3.1c.1 1.1.2 1.7.4 2.1.2.5.5.9.8 1.3.4.3.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.5 1.3-.8.3-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1a3.5 3.5 0 0 0-.8-1.3 3.5 3.5 0 0 0-1.3-.8c-.4-.2-1-.3-2.1-.4C15.5 4.2 15.1 4.2 12 4.2zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 7.2a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6zm5.6-7.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/smknileboleng/" target="_blank" rel="noopener" aria-label="Facebook" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-blue-600 grid place-items-center transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22.7 0H1.3C.6 0 0 .6 0 1.3v21.4c0 .7.6 1.3 1.3 1.3h11.5v-9.3H9.7v-3.6h3.1V8.4c0-3.1 1.9-4.8 4.7-4.8 1.3 0 2.5.1 2.8.1v3.3h-1.9c-1.5 0-1.8.7-1.8 1.8v2.3h3.6l-.5 3.6h-3.1V24h6c.7 0 1.3-.6 1.3-1.3V1.3C24 .6 23.4 0 22.7 0z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h5 class="font-display font-bold text-white">Navigasi</h5>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href="#keunggulan" class="hover:text-white">Keunggulan</a></li>
+        <li><a href="#jurusan" class="hover:text-white">Jurusan</a></li>
+        <li><a href="#alur" class="hover:text-white">Alur Daftar</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-display font-bold text-white">Kontak</h5>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>✉️ <a href="mailto:esemkaibo@gmail.com" class="hover:text-white">esemkaibo@gmail.com</a></li>
+        <li>🌐 <a href="http://www.smknileboleng.sch.id" target="_blank" rel="noopener" class="hover:text-white">www.smknileboleng.sch.id</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-5 mt-10 pt-6 border-t border-white/10 text-xs text-white/60 text-center">
+    © 2026 SMKN Ile Boleng · Skill Nyata, Masa Depan Pasti.
+  </div>
+</footer>
+
+<!-- MODAL BOOKING -->
+<div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/70 backdrop-blur-sm p-4" role="dialog" aria-modal="true">
+  <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative">
+    <button onclick="closeModal()" aria-label="Tutup" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 grid place-items-center">✕</button>
+    <div class="text-center">
+      <div class="w-14 h-14 mx-auto rounded-2xl bg-green-100 grid place-items-center text-3xl">💬</div>
+      <h3 class="font-display text-xl font-bold mt-4">Pilih Jurusan Tujuan</h3>
+      <p class="text-slate-600 text-sm mt-1">Pesan akan dikirim ke WhatsApp panitia PPDB.</p>
+    </div>
+    <div class="mt-6 space-y-2">
+      <label class="flex items-center gap-3 p-3 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-brand-500 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50 transition"><input type="radio" name="jurusan" value="Teknik Komputer & Jaringan" class="accent-brand-600" /><span class="text-xl">💻</span><span class="font-semibold">Teknik Komputer &amp; Jaringan</span></label>
+      <label class="flex items-center gap-3 p-3 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-brand-500 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50 transition"><input type="radio" name="jurusan" value="Produksi Film" class="accent-brand-600" /><span class="text-xl">🎬</span><span class="font-semibold">Produksi Film</span></label>
+      <label class="flex items-center gap-3 p-3 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-brand-500 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50 transition"><input type="radio" name="jurusan" value="Layanan Perbankan" class="accent-brand-600" /><span class="text-xl">🏦</span><span class="font-semibold">Layanan Perbankan</span></label>
+      <label class="flex items-center gap-3 p-3 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-brand-500 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50 transition"><input type="radio" name="jurusan" value="Teknik Instalasi Tenaga Listrik (On Progress)" class="accent-brand-600" /><span class="text-xl">⚡</span><span class="font-semibold">Teknik Instalasi Tenaga Listrik <span class="text-xs font-normal text-amber-600">(On Progress)</span></span></label>
+    </div>
+    <button onclick="sendWhatsApp()" class="w-full mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-green-500/30 transition">📱 Kirim via WhatsApp</button>
+    <p id="modal-error" class="text-sm text-red-500 text-center mt-3 hidden">Silakan pilih jurusan terlebih dahulu.</p>
+  </div>
+</div>
+
+<!-- MODAL INFO DETAIL -->
+<div id="detail-modal" class="fixed inset-0 z-50 hidden items-start justify-center bg-slate-900/70 backdrop-blur-sm p-4 overflow-y-auto" role="dialog" aria-modal="true">
+  <div class="bg-white rounded-3xl max-w-3xl w-full my-8 shadow-2xl relative">
+    <div id="detail-header" class="sticky top-0 z-10 flex items-center justify-between p-5 sm:p-6 border-b border-slate-100 bg-white rounded-t-3xl">
+      <h3 id="detail-title" class="font-display text-lg sm:text-xl font-bold">Info Detail</h3>
+      <button onclick="closeDetail()" aria-label="Tutup" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 grid place-items-center">✕</button>
+    </div>
+    <div id="detail-body" class="p-5 sm:p-8 prose-insight text-slate-700 text-sm sm:text-base"></div>
+    <div class="p-5 sm:p-6 border-t border-slate-100 bg-slate-50 rounded-b-3xl flex flex-wrap gap-3 justify-end">
+      <button onclick="closeDetail()" class="px-5 py-2.5 rounded-xl bg-white border border-slate-200 font-semibold hover:bg-slate-100 transition">Tutup</button>
+      <button id="detail-book-btn" class="px-5 py-2.5 rounded-xl bg-accent hover:bg-yellow-300 text-brand-900 font-bold transition">🎯 Booking Kuota Jurusan Ini</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // === CUSTOMIZE HERE ===
+  const WA_NUMBER = '6281380879750';
+  // ======================
+
+  // BOOKING MODAL
+  const modal = document.getElementById('modal');
+  const errorMsg = document.getElementById('modal-error');
+  function openModal(preselect) {
+    modal.classList.remove('hidden'); modal.classList.add('flex');
+    errorMsg.classList.add('hidden');
+    if (preselect) document.querySelectorAll('input[name="jurusan"]').forEach(r => { if (r.value === preselect) r.checked = true; });
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); document.body.style.overflow = ''; }
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  function sendWhatsApp() {
+    const selected = document.querySelector('input[name="jurusan"]:checked');
+    if (!selected) { errorMsg.classList.remove('hidden'); return; }
+    const msg = `Halo, saya tertarik. Saya mau mendaftar untuk jurusan: ${selected.value}`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  // DETAIL MODAL
+  const detailModal = document.getElementById('detail-modal');
+  const detailTitle = document.getElementById('detail-title');
+  const detailBody = document.getElementById('detail-body');
+  const detailHeader = document.getElementById('detail-header');
+  const detailBookBtn = document.getElementById('detail-book-btn');
+
+  const INSIGHT = {
+    pf: {
+      title: '🎬 Produksi Film — Info Detail',
+      color: 'linear-gradient(120deg,#e11d48,#f97316)',
+      booking: 'Produksi Film',
+      html: `
+        <h4>1. Profil & Sejarah Jurusan</h4>
+        <ul>
+          <li><b>Program Keahlian:</b> Broadcasting & Perfilman (bidang Seni & Ekonomi Kreatif)</li>
+          <li><b>Berdiri sejak 2011</b>, awalnya sebagai Multimedia</li>
+          <li>Dikonversi menjadi <b>Produksi Film</b> via Kurikulum Merdeka (SK Dirjen 024/H/KR/2022)</li>
+          <li><b>15 tahun</b> pengalaman di bidang kreatif-visual</li>
+        </ul>
+        <div class="box-y"><b>Fakta Kunci:</b> Hanya sekitar 23 SMK se-Indonesia yang resmi memiliki konsentrasi Produksi Film. SMKN Ile Boleng kemungkinan besar <b>satu-satunya di Pulau Adonara dan Flores Timur</b>.</div>
+
+        <h4>2. Kurikulum (Kurikulum Merdeka + SKKNI)</h4>
+        <p>Mengacu pada <b>CP BSKP 046/2025</b>, <b>SKKNI Tata Kamera Film (Kepmenaker 2019-027)</b>, dan <b>SKKNI Tata Cahaya Film (Kepmenaker 2020-154)</b>.</p>
+        <p><b>Fase E (Kelas X):</b> K3LH produksi film, dasar fotografi & videografi, naskah & storyboard, dasar editing, komunikasi visual, dasar jurnalistik.</p>
+        <p><b>Fase F (Kelas XI–XII):</b></p>
+        <ul>
+          <li>🎬 Manajemen Produksi Film</li>
+          <li>📝 Penulisan Naskah & Penyutradaraan</li>
+          <li>📷 Tata Kamera & Tata Cahaya</li>
+          <li>🎨 Tata Artistik</li>
+          <li>🔊 Tata Suara</li>
+          <li>✂️ Editing & Post-Production</li>
+          <li>📣 Promosi & Distribusi</li>
+        </ul>
+        <div class="box">Kurikulum sudah di-breakdown menjadi <b>7 Tujuan Pembelajaran (TP)</b> yang dipetakan ke SKKNI dan kompetensi <b>6C Deep Learning</b>, dan didukung <b>platform PWA "TataKamera"</b> untuk pembelajaran mandiri.</div>
+
+        <h4>3. Inventaris Peralatan Profesional</h4>
+        <p><b>📷 Kamera:</b></p>
+        <ul>
+          <li>⭐ <b>Sony A6600</b> — Mirrorless APS-C, 4K 30fps, Real-Time Eye AF, 5-axis IBIS, 120fps slow-mo</li>
+          <li>⭐ <b>Panasonic HC-X2000</b> — Camcorder Broadcast, 4K 60fps 10-bit HDR, 2× XLR, NDI|HX, <b>live streaming built-in</b>, 24× optical zoom</li>
+          <li><b>Canon 750D</b> — DSLR APS-C 24.2MP</li>
+          <li><b>Nikon D5500</b> — DSLR APS-C 24.2MP tanpa low-pass filter</li>
+          <li><b>Canon Legria</b> — Consumer camcorder Full HD</li>
+        </ul>
+        <p><b>🔭 Lensa:</b> Canon EF 50mm f/1.8 STM, Sony E 35mm f/1.8 OSS, Canon EF-S 18-55mm, Sony E 16-50mm.</p>
+        <p><b>🔧 Pendukung:</b> Tripod fluid head, slider, drone, ATEM Mini, greenscreen, LED panel bi-color, tungsten, reflector, softbox, mic eksternal.</p>
+        <div class="box-g"><b>Highlight:</b> Panasonic HC-X2000 dengan NDI|HX dan live streaming native — kapabilitas yang sangat jarang dimiliki SMK di Indonesia timur.</div>
+
+        <h4>4. Portofolio Layanan Profesional</h4>
+        <p><b>🏛️ Event Pemerintahan & Politik:</b></p>
+        <ul>
+          <li>🔴 Live streaming <b>Debat Perdana Pilbup Flotim 2024</b></li>
+          <li>🔴 Live streaming <b>Rapat Pleno Kabupaten Pilbup Flotim (3 hari)</b> untuk KPUD</li>
+          <li>🔴 Live streaming <b>Rapat Pleno Penetapan Hasil Pilbup</b></li>
+          <li>🔴 Live streaming <b>HUT RI Tingkat Kecamatan Ile Boleng</b></li>
+        </ul>
+        <p><b>🏟️ Event Olahraga & Peresmian:</b> Opening Ceremony Ape Buan Cup I & Peresmian Stadion Ape Buan.</p>
+        <p><b>🏦 Korporat:</b> Panen Undian BRI Simpedes Tingkat Cabang Larantuka.</p>
+        <p><b>⛪ Keagamaan:</b> Peresmian Gereja Koli Masang, Imam Baru, Pesta Perak.</p>
+        <div class="box-y"><b>Mengapa penting?</b> KPUD mempercayakan acara high-stakes kepada siswa SMK — bukan vendor komersial. BRI sebagai institusi nasional juga memilih layanan sekolah ini. Siswa sudah <b>melayani klien nyata</b> (Teaching Factory konkret).</div>
+
+        <h4>5. 4 Domain Kompetensi Siswa</h4>
+        <p><span class="chip">📸 Dokumentasi Foto</span><span class="chip">🎥 Dokumentasi Video</span><span class="chip">🔴 Live Streaming Multi-Kamera</span><span class="chip">🎬 Produksi Film</span></p>
+
+        <h4>6. Prospek Karier Lulusan</h4>
+        <p><b>🎥 Industri Film & TV:</b> Sinematografer, Sutradara, Editor, Colorist, Sound Designer, Produser, Tata Artistik.</p>
+        <p><b>📱 Ekonomi Kreatif Digital:</b> Content creator YouTube/TikTok/IG, videografer freelance (wedding/event), video editor remote, operator live streaming, pengelola sosmed UMKM.</p>
+        <p><b>🎓 Pendidikan Lanjut:</b> ISI (Institut Seni Indonesia), Politeknik & universitas DKV/Multimedia/Broadcasting, beasiswa jalur portofolio.</p>
+        <p><b>💼 Fakta:</b> PT Produksi Film Negara (PFN/Persero) buka rekrutmen reguler. Industri kreatif Indonesia menjadi pilar ekonomi nasional.</p>
+      `
+    },
+    tkj: {
+      title: '💻 Teknik Komputer & Jaringan — Info Detail',
+      color: 'linear-gradient(120deg,#2563eb,#4f46e5)',
+      booking: 'Teknik Komputer & Jaringan',
+      html: `
+        <h4>1. Jurusan Pertama & Paling Berpengalaman</h4>
+        <ul>
+          <li>Didirikan tahun <b>2006</b> bersamaan dengan berdirinya SMKN Ile Boleng</li>
+          <li><b>Jurusan TKJ Pertama di Flores Timur</b> — pelopor pendidikan jaringan komputer di wilayah ini</li>
+          <li>Pengalaman hampir <b>dua dekade</b> mencetak lulusan bidang jaringan & IT</li>
+        </ul>
+
+        <h4>2. Fasilitas Praktik Terlengkap</h4>
+        <div class="box-g"><b>2 Gedung Ruang Praktik khusus TKJ</b> — memberi ruang lebih luas untuk setiap siswa berlatih hands-on.</div>
+
+        <h4>3. Paket Peralatan Fiber Optik Profesional</h4>
+        <ul>
+          <li>🔗 <b>Splicer</b> — menyambung kabel fiber optik secara presisi</li>
+          <li>📡 <b>OTDR</b> (Optical Time-Domain Reflectometer) — mendeteksi gangguan & mengukur panjang fiber</li>
+          <li>💡 <b>OPM</b> (Optical Power Meter) — mengukur kekuatan sinyal optik</li>
+          <li>🧰 <b>Tool Kit Fiber Lengkap</b> — cleaver, stripper, visual fault locator, dll.</li>
+        </ul>
+        <div class="box-y"><b>Dampak nyata:</b> Saat PKL di Telkom, siswa sudah familiar dengan perangkat jaringan fiber — tidak perlu belajar dari nol.</div>
+
+        <h4>4. Sertifikasi Profesi Standar Nasional</h4>
+        <p>Sejak <b>2025</b>, Uji Kompetensi Keahlian (UKK) TKJ menggunakan <b>pola LSP</b> melalui kemitraan dengan <b>LSP P1 SMKN 1 Kupang</b>.</p>
+        <ul>
+          <li>📜 Lulus membawa <b>sertifikat kompetensi profesi</b> diakui industri, bukan sekadar ijazah</li>
+          <li>🤝 Anak siap kerja dengan bukti kompetensi resmi yang diakui nasional</li>
+        </ul>
+
+        <h4>5. Jurusan Favorit di SMKN Ile Boleng</h4>
+        <ul>
+          <li>Tingkat peminat tertinggi dari tahun ke tahun</li>
+          <li>Reputasi kuat di kalangan SMP se-Adonara</li>
+          <li>Jaringan alumni luas — banyak yang bekerja di bidang IT & telekomunikasi</li>
+        </ul>
+
+        <h4>6. Prospek Karier</h4>
+        <p>Teknisi ISP, admin jaringan, support IT, teknisi Telkom, wirausaha warnet / jasa pasang WiFi kampung / servis komputer. Selama dunia masih pakai internet, TKJ selalu laku.</p>
+
+        <h4>7. Ringkasan Diferensiasi</h4>
+        <ul>
+          <li><b>Usia:</b> Pelopor TKJ di Flores Timur sejak 2006</li>
+          <li><b>Fasilitas:</b> 2 gedung praktik khusus TKJ</li>
+          <li><b>Peralatan:</b> Paket Fiber Optik lengkap (Splicer, OTDR, OPM)</li>
+          <li><b>PKL:</b> Siap kerja di Telkom & industri telekomunikasi</li>
+          <li><b>Sertifikasi:</b> UKK pola LSP (mitra LSP P1 SMKN 1 Kupang) sejak 2025</li>
+        </ul>
+      `
+    },
+    lp: {
+      title: '🏦 Layanan Perbankan — Info Detail',
+      color: 'linear-gradient(120deg,#059669,#0d9488)',
+      booking: 'Layanan Perbankan',
+      html: `
+        <h4>1. Pengalaman Hampir Satu Dekade</h4>
+        <ul>
+          <li>Didirikan tahun <b>2016</b> sebagai jurusan Perbankan & Keuangan Mikro</li>
+          <li>Dikonversi menjadi <b>Layanan Perbankan</b> mengikuti Kurikulum Merdeka</li>
+          <li>Hampir <b>10 tahun</b> mencetak lulusan siap kerja di sektor keuangan</li>
+          <li><b>Satu-satunya jurusan perbankan di Adonara</b></li>
+        </ul>
+
+        <h4>2. Fasilitas Bank Mini Lengkap</h4>
+        <div class="box-g"><b>2 Gedung Ruang Praktik</b>, termasuk <b>Bank Mini</b> yang didesain menyerupai kantor bank sungguhan (meja teller, CS, ruang tunggu nasabah).</div>
+        <p><b>Peralatan Bank Mini:</b></p>
+        <ul>
+          <li>💵 <b>Mesin Pendeteksi Uang Palsu</b> — melatih siswa mengenali uang asli & palsu seperti teller bank</li>
+          <li>📘 <b>Mesin Passbook Printer</b> — mencetak Buku Tabungan, pengalaman langsung operasional teller</li>
+          <li>🏦 <b>Setup Layout Bank Mini</b> — simulasi lingkungan kerja nyata</li>
+        </ul>
+        <div class="box-y"><b>Dampak nyata:</b> Siswa sudah terbiasa dengan alur kerja teller & customer service <b>sebelum PKL</b> — tinggal mengaplikasikan di bank sungguhan.</div>
+
+        <h4>3. Jaringan Mitra PKL Luas</h4>
+        <p><b>Bank:</b> BRI, Bank NTT, Bank BTN Maumere.</p>
+        <p><b>Koperasi Kredit:</b> Kopdit Swastisari, Kopdit Pintu Air, Kopdit Ikamala.</p>
+        <p>Lintas pulau, lintas jenis lembaga keuangan.</p>
+
+        <h4>4. Success Story: Langsung Kerja Setelah Lulus</h4>
+        <div class="box" style="background:#faf5ff;border-color:#e9d5ff"><b>🎉 Bukti nyata:</b> Seorang peserta PKL <b>dibooking langsung oleh Kopdit Pintu Air</b> saat masih PKL. Begitu lulus tahun <b>2025</b>, langsung bergabung dan <b>saat ini bertugas di Ende</b>.</div>
+        <p>Ini adalah social proof terkuat — siswa SMKN Ile Boleng tidak menunggu lama untuk bekerja, bahkan di-hire sebelum lulus.</p>
+
+        <h4>5. Prospek Karier</h4>
+        <ul>
+          <li>Teller bank & customer service</li>
+          <li>Staf koperasi kredit</li>
+          <li>Back office perbankan</li>
+          <li>Admin lembaga keuangan mikro</li>
+          <li>Wirausaha layanan keuangan digital</li>
+        </ul>
+
+        <h4>6. Ringkasan Diferensiasi</h4>
+        <ul>
+          <li><b>Usia:</b> Sejak 2016 (konversi dari Perbankan & Keuangan Mikro)</li>
+          <li><b>Fasilitas:</b> 2 gedung praktik + Bank Mini lengkap</li>
+          <li><b>Peralatan khas:</b> Mesin pendeteksi uang palsu & Passbook Printer</li>
+          <li><b>Mitra PKL:</b> BRI, Bank NTT, BTN Maumere, Kopdit Swastisari/Pintu Air/Ikamala</li>
+          <li><b>Serapan:</b> Alumni dibooking Kopdit Pintu Air → bertugas di Ende sejak 2025</li>
+        </ul>
+      `
+    },
+    titl: {
+      title: '⚡ Teknik Instalasi Tenaga Listrik — Info Detail',
+      color: 'linear-gradient(120deg,#f59e0b,#ea580c)',
+      booking: 'Teknik Instalasi Tenaga Listrik (On Progress)',
+      html: `
+        <div class="box-y"><b>🚧 Status: On Progress</b><br/>Jurusan ini sedang dalam proses pengajuan pembukaan resmi. SMKN Ile Boleng telah mendapatkan dukungan dari Disdikbud Provinsi NTT untuk pengembangan jurusan baru.</div>
+
+        <h4>1. Tentang Jurusan</h4>
+        <p>Teknik Instalasi Tenaga Listrik (TITL) adalah konsentrasi keahlian yang mempersiapkan siswa menjadi teknisi profesional di bidang kelistrikan — mulai dari instalasi listrik rumah tangga, gedung bertingkat, hingga industri.</p>
+
+        <h4>2. Kompetensi yang Akan Dipelajari</h4>
+        <ul>
+          <li>⚡ Instalasi listrik rumah tinggal & gedung</li>
+          <li>🏭 Instalasi tenaga listrik industri</li>
+          <li>🔌 Sistem tenaga & kontrol motor listrik</li>
+          <li>💡 Perawatan & troubleshooting sistem kelistrikan</li>
+          <li>📐 Pembacaan gambar teknik & diagram rangkaian</li>
+          <li>🛡️ K3 (Keselamatan & Kesehatan Kerja) kelistrikan</li>
+        </ul>
+
+        <h4>3. Prospek Karier</h4>
+        <ul>
+          <li>Teknisi PLN & perusahaan kelistrikan</li>
+          <li>Teknisi instalasi gedung & perumahan</li>
+          <li>Operator & teknisi panel listrik industri</li>
+          <li>Wirausaha jasa instalasi listrik</li>
+          <li>Teknisi proyek konstruksi & infrastruktur</li>
+          <li>Lanjut ke Politeknik jurusan Teknik Listrik</li>
+        </ul>
+
+        <h4>4. Kenapa Prospeknya Menjanjikan?</h4>
+        <ul>
+          <li>🔌 Permintaan teknisi listrik terus naik seiring pembangunan infrastruktur NTT</li>
+          <li>🏠 Setiap rumah & gedung butuh teknisi listrik</li>
+          <li>☀️ Energi terbarukan (PLTS, PLTMH) membuka peluang baru</li>
+          <li>💼 Skill praktis yang tidak bisa digantikan AI</li>
+        </ul>
+
+        <h4>5. Kesempatan Angkatan Perdana</h4>
+        <div class="box-g">Dengan status <b>angkatan pertama</b>, kamu akan mendapat perhatian lebih dari guru, kesempatan membangun kultur jurusan, dan menjadi <b>generasi pionir</b> TITL SMKN Ile Boleng.</div>
+
+        <div class="box"><b>Catatan:</b> Info detail kurikulum, peralatan, dan jadwal pembukaan resmi akan di-update di halaman ini setelah SK resmi diterbitkan. Pantau terus media sosial sekolah.</div>
+      `
+    }
+  };
+
+  function openDetail(key) {
+    const data = INSIGHT[key];
+    if (!data) return;
+    detailTitle.textContent = data.title;
+    detailBody.innerHTML = data.html;
+    detailHeader.style.background = 'linear-gradient(90deg,#fff,#fff)';
+    detailModal.classList.remove('hidden');
+    detailModal.classList.add('flex');
+    detailBookBtn.onclick = () => { closeDetail(); openModal(data.booking); };
+    document.body.style.overflow = 'hidden';
+    detailModal.scrollTop = 0;
+  }
+  function closeDetail() { detailModal.classList.add('hidden'); detailModal.classList.remove('flex'); document.body.style.overflow = ''; }
+  detailModal.addEventListener('click', e => { if (e.target === detailModal) closeDetail(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeDetail(); } });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
